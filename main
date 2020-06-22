@@ -6,4 +6,4 @@
 set -e
 
 # create brainmask
-time singularity exec -e docker://brainlife/mrtrix3:3.0.0 ./mrtrix3_brainmask.sh
+time singularity exec -e docker://brainlife/mrtrix3:3.0.0 ./mrtrix3_dwi_brainmask.sh
