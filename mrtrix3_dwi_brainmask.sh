@@ -19,6 +19,7 @@ echo "Converting raw data into MRTrix3 format..."
 [ ! -f dwi.b ] && mrconvert -fslgrad ${bvecs} ${bvals} ${dwi} dwi.mif --export_grad_mrtrix dwi.b -force -nthreads $NCORE -quiet
 
 #### create mask of dwi data - use bet for more robust mask ####
+echo "creating brainmask"
 [ ! -f mask.mif ] && dwi2mask dwi.mif - -force -nthreads $NCORE -quiet | maskfilter - dilate mask.mif -npass 5 -force -nthreads $NCORE -quiet
 [ ! -f ${outdir}/mask.nii.gz ] && mrconvert mask.mif ./mask/mask.nii.gz -force -nthreads $NCORE -quiet
 
