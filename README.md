@@ -3,6 +3,30 @@
 
 # Create brainmask of DWI using MrTrix3
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Creates a brain mask of a DWI with MRtrix3 dwi2mask, dilated by five voxels.**
+
+Converts the DWI to MRtrix format with its gradient table, runs dwi2mask, dilates the mask five passes with maskfilter, and writes mask/mask.nii.gz. Use it when a later step needs a DWI-space brain mask; the dilation makes it generous rather than tight.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.387](https://doi.org/10.25663/brainlife.app.387)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `dwi` | `neuro/dwi` | yes | DWI image with bvecs and bvals. |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `mask` | `neuro/mask` | Dilated brain mask of the DWI (mask.nii.gz). |
+
+Runtime: container `brainlife/mrtrix3:3.0.0`; 8 CPUs; 16 GB memory; 0.33 h walltime.
+
+Please cite:
+- Avesani P, McPherson B, Hayashi S, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+- Tournier JD, Smith R, Raffelt D, et al. MRtrix3: A fast, flexible and open software framework for medical image processing and visualisation. NeuroImage 202:116137 (2019). [doi:10.1016/j.neuroimage.2019.116137](https://doi.org/10.1016/j.neuroimage.2019.116137)
+
+<!-- brainlife-app:end -->
+
 This app will create a brainmask of dMRI data using MRTrix3
 
 ### Authors
