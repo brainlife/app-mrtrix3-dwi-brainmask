@@ -10,7 +10,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT license"></a>
 </p>
 
-## 🧠 At a glance
+## At a glance
 
 <!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
 
@@ -20,19 +20,19 @@ Converts the DWI to MRtrix format with its gradient table, runs dwi2mask, dilate
 
 | | |
 |---|---|
-| 📥 **Inputs** | `neuro/dwi` |
-| 📤 **Outputs** | `neuro/mask` |
-| 🐳 **Container** | `brainlife/mrtrix3:3.0.0` |
-| ⚙️ **Resources** | 8 CPUs · 16 GB memory · 0.33 h walltime |
-| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.387](https://doi.org/10.25663/brainlife.app.387) |
+| **Inputs** | `neuro/dwi` |
+| **Outputs** | `neuro/mask` |
+| **Container** | `brainlife/mrtrix3:3.0.0` |
+| **Resources** | 8 CPUs · 16 GB memory · 0.33 h walltime |
+| **Run it** | [doi.org/10.25663/brainlife.app.387](https://doi.org/10.25663/brainlife.app.387) |
 
-#### 📥 Inputs
+#### Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
 | `dwi` | `neuro/dwi` | yes | DWI image with bvecs and bvals. |
 
-#### 📤 Outputs
+#### Outputs
 
 | Output | Datatype | Description |
 |---|---|---|
@@ -40,9 +40,9 @@ Converts the DWI to MRtrix format with its gradient table, runs dwi2mask, dilate
 
 <!-- brainlife-app:end -->
 
-## 🚀 Running the App
+## Running the App
 
-### ☁️ On brainlife.io
+### On brainlife.io
 
 Open the App at [doi.org/10.25663/brainlife.app.387](https://doi.org/10.25663/brainlife.app.387), choose a `neuro/dwi` dataset from your project and press **Execute**. The result is a `neuro/mask` dataset tagged `dwi` and `brain`, archived to your project for any App that needs a brain mask in diffusion space.
 
@@ -53,7 +53,7 @@ The App:
 3. dilates the mask by five passes with `maskfilter dilate`, so the mask is generous rather than tight;
 4. writes the mask as NIfTI.
 
-### 💻 Locally
+### Locally
 
 You need [Singularity/Apptainer](https://apptainer.org/) and [`jq`](https://jqlang.github.io/jq/). MRtrix3 3.0.0 runs inside the `brainlife/mrtrix3:3.0.0` container.
 
@@ -74,7 +74,7 @@ You need [Singularity/Apptainer](https://apptainer.org/) and [`jq`](https://jqla
    ./main
    ```
 
-### 🧪 Sample data
+### Sample data
 
 Download sample datasets from brainlife.io with the [brainlife CLI](https://github.com/brainlife/cli):
 
@@ -85,7 +85,7 @@ mkdir input
 bl dataset download <dataset-id>
 ```
 
-## 📦 Outputs
+## Outputs
 
 ```text
 mask/
@@ -93,11 +93,11 @@ mask/
 raw/              intermediate MRtrix files (dwi.mif, dwi.b, mask.mif)
 ```
 
-## 🩺 Troubleshooting
+## Troubleshooting
 
 - **`mask failed. see derivatives and logs`**: `mask/mask.nii.gz` was not produced. Check that `bvecs` and `bvals` match the DWI (number of volumes and orientation) and inspect the log.
 
-## 📚 Citing
+## Citing
 
 > [!TIP]
 > If you use this App in your work, please cite the App, the software it builds on and brainlife.io (below). GitHub's **Cite this repository** button gives the App citation in APA and BibTeX.
@@ -107,13 +107,13 @@ raw/              intermediate MRtrix files (dwi.mif, dwi.b, mask.mif)
 - Avesani P, McPherson B, Hayashi S, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
 - Hayashi S, Caron BA, Heinsfeld AS, et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. *Nature Methods* 21:809–813 (2024). [doi:10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 
-## 👥 Authors
+## Authors
 
 - Brad Caron
 
 **Contributors:** Soichi Hayashi, Brent McPherson (original masking code)
 
-## 💰 Funding
+## Funding
 
 [![Wellcome-226486/Z/22/Z](https://img.shields.io/badge/Wellcome-226486%2FZ%2F22%2FZ-purple.svg)](https://wellcome.org/)
 [![NIH-NINDS-U24NS140384](https://img.shields.io/badge/NIH_NINDS-U24NS140384-green.svg)](https://reporter.nih.gov/project-details/11261037)
@@ -132,6 +132,6 @@ raw/              intermediate MRtrix files (dwi.mif, dwi.b, mask.mif)
 
 <sub>brainlife.io is publicly funded, and acknowledging that support helps keep it running. This App was developed with support from Wellcome, the U.S. National Institutes of Health (including the BRAIN Initiative BRAIN CONNECTS program: The Axonal Projectome EXchange, U24NS140384, and the Center for Mesoscale Connectomics, UM1NS132207) and the U.S. National Science Foundation.</sub>
 
-## ⚖️ License
+## License
 
 [MIT](LICENSE). MRtrix3 itself is distributed under the [Mozilla Public License 2.0](https://www.mrtrix.org/).
